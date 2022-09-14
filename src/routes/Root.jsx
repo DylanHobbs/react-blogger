@@ -1,4 +1,4 @@
-import { Link, Outlet, useLoaderData } from "react-router-dom";
+import { NavLink, Outlet, useLoaderData } from "react-router-dom";
 import { useState } from 'react'
 import './Root.css'
 
@@ -43,7 +43,7 @@ export default function Root() {
                   }
                 }).map((post, index) => (
                   <li key={post.slug}>
-                    <Link to={`post/${post.slug}`}>
+                    <NavLink to={`post/${post.slug}`}>
                       {post.title ? (
                         <>
                           {post.title}
@@ -51,7 +51,7 @@ export default function Root() {
                       ) : (
                         <i>Untitled</i>
                       )}{" "}
-                    </Link>
+                    </NavLink>
                   </li>
                 ))
               }

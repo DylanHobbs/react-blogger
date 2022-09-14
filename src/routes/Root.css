@@ -37,9 +37,6 @@
 }
 
 #sidebar > div {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #e3e3e3;
@@ -51,7 +48,7 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='%23999' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z' /%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: 0.625rem 0.75rem;
-  background-size: 1rem;
+  background-size: 1.1rem;
   position: relative;
 }
 
@@ -99,12 +96,11 @@ i {
 }
 
 #sidebar nav a.active {
-  background: hsl(224, 98%, 58%);
-  color: white;
+  background: #e3e3e3;
 }
 
 #sidebar nav a.pending {
-  color: hsl(224, 98%, 58%);
+  color: #e3e3e3
 }
 
 #sidebar nav {
@@ -117,6 +113,7 @@ i {
   flex: 1;
   padding: 2rem 4rem;
   width: 100%;
+  overflow: scroll;
 }
 
 #detail.loading {
