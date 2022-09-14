@@ -1,0 +1,53 @@
+/* 
+  Markdown Element Table
+  @ https://www.w3schools.com/css/css_table.asp
+*/
+table {
+  border-collapse: collapse;
+  min-width: 40%;
+}
+
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 6px;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table td:hover {background-color: #ddd;}
+
+table th {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: left;
+}
+
+/*
+  Markdown Element Blockquote
+  @ https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/
+*/
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 0px;
+  padding: 0.1em 10px;
+}
+
+
+/*
+  Markdown Element Lists
+  @ https://css-tricks.com/list-style-recipes/
+*/
+
+/*
+  Markdown Element Codeblock
+  Also uses Prism 
+*/
+pre {
+  background: #f2f2f2;
+  padding: 10px 20px;
+  border-left: 3px solid black;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}

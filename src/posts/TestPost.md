@@ -27,6 +27,24 @@ tags:
 ![image info](/testProject/image.jpg)
 
 ### Quotes
-> They hung in the air the same way that bricks don't
+> They hung in the air the same way that bricks don't.
 
 ### Lists
+1. First item
+2. Second item
+3. Third item
+4. Forth item
+
+- First item
+- Second item
+- Third item
+- Forth item
+
+### Code Blocks
+```javascript
+const Test = () => {
+  return (
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Do it.</a>
+  )
+}
+```

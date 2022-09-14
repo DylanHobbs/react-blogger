@@ -10,5 +10,10 @@ Everything is written in React and is completly customiseable.
 # Todo
 - [ ] Make list search able
 - [ ] Independent scrolling detail panel (or fixed nav .. )
+- [ ] Add current page highlighting
+- [ ] Add scss and variables
+- [ ] Syntax highlighting in code blocks
+- [ ] Fix history mode on production
 - [ ] Allow markdown field to suggest an ordering 
 - [ ] Add documentation on how to use this template
+- [ ] Table of contents with anchor link ( enabled per markdown )
