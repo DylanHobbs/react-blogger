@@ -7,7 +7,6 @@ import ErrorPage from "./error-page";
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
 } from "react-router-dom";
 import Post from './routes/Post'
 
