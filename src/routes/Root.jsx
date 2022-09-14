@@ -41,7 +41,7 @@ export default function Root() {
                   } else if (post.title.toLowerCase().includes(searchTerm.toLowerCase())) {
                     return post
                   }
-                }).map((post, index) => (
+                }).map((post) => (
                   <li key={post.slug}>
                     <NavLink to={`post/${post.slug}`}>
                       {post.title ? (
