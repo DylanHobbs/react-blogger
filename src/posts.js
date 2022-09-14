@@ -26,10 +26,12 @@ export const getPrettyPosts = () => {
   const prettyPosts = []
   for (const path in modules) {
       const mod = modules[path]
-      prettyPosts.push({
-        ...mod.attributes,
-        content: mod.html,
-      })
+      if(! mod.attributes?.hidden) {
+        prettyPosts.push({
+          ...mod.attributes,
+          content: mod.html,
+        })
+      }
     }
     return prettyPosts
 }
@@ -38,7 +40,7 @@ export const getPostBySlug = ({ params }) => {
   const posts = getPrettyPosts();
   let found = null
   posts.forEach(element => {
-    if(element.slug === params.postSlug) found = element
+    if(element.slug === params.postSlug && !element?.hidden) found = element
   });
 
   return found
