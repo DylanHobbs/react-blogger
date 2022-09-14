@@ -24,6 +24,9 @@ tags:
 
 
 ### Images
+To add images just add them to the `/public` folder. You can create subfolders in there to organise them.
+You use an absoute path to reference the images. Like so:
+
 ![image info](/testProject/image.jpg)
 
 ### Quotes
