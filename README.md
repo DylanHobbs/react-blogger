@@ -1,7 +1,8 @@
 # React Blogger
-React <3 Tailwind <3 Markdown
+React <3 Markdown
 
-An actual simple way to run a static blog for people who are in anyway technical.
+An actual simple way to run a static blog for people who are in anyway technical.  
+No CMS, just static assets that get bundled at buildtime  
 Write your posts in Markdown and that's about all there is to it.
 
 Everything is written in React and is completly customiseable.
@@ -10,12 +11,11 @@ Everything is written in React and is completly customiseable.
 1. Clone the repo as a template
     - You can press the "Use This Template" button on the github page
     - Or use a tool like [Degit](https://github.com/Rich-Harris/degit) to clone the repo
-2. Create your own repo
-    - You'll need to create your own repo on Github or Gitlab.
-    - Just head over to the site and click "Add New Repo" and follow the instructions for "existing folder/repository"   
+2. Create your own repo / clone
+    - If you used "Use This Template" on github you'll be taken to your new repo. You clone this to your local machine
+    - If you used Degit, just head over to the github/gitlab and click "Add New Repo" and follow the instructions for "existing folder/repository"   
 3. Get it running locally  
-    - Once you have your own personal repo cloned to your machine, get into that folder and run the following commands:
-    - After that you should be able to see the site at http://localhost:5173 in your browser
+    - Once you have your own personal repo cloned to your machine, get into that folder and run the below commands. Once done, you'll find the site at http://localhost:5173
 ```
 > npm i 
 > npm run dev
