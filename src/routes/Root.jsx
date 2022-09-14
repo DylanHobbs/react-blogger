@@ -1,8 +1,10 @@
 import { Link, Outlet, useLoaderData } from "react-router-dom";
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import './Root.css'
 
 export default function Root() {
   const posts = useLoaderData()
+  const [ searchTerm, setSearchTerm ] = useState('')
 
   return (
     <>
@@ -15,6 +17,8 @@ export default function Root() {
               placeholder="Search"
               type="search"
               name="q"
+              value={searchTerm}
+              onChange={event => setSearchTerm(event.target.value)}
             />
             <div
               id="search-spinner"
@@ -26,26 +30,31 @@ export default function Root() {
               aria-live="polite"
             ></div>
           </form>
-          {/* <form method="post">
-            <button type="submit">New</button>
-          </form> */}
         </div>
         <nav>
         {posts.length ? (
             <ul>
-              {posts.map((post) => (
-                <li key={post.slug}>
-                  <Link to={`post/${post.slug}`}>
-                    {post.title ? (
-                      <>
-                        {post.title}
-                      </>
-                    ) : (
-                      <i>Untitled</i>
-                    )}{" "}
-                  </Link>
-                </li>
-              ))}
+              {
+                posts.filter(post => {
+                  if(searchTerm === '') {
+                    return post
+                  } else if (post.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+                    return post
+                  }
+                }).map((post, index) => (
+                  <li key={post.slug}>
+                    <Link to={`post/${post.slug}`}>
+                      {post.title ? (
+                        <>
+                          {post.title}
+                        </>
+                      ) : (
+                        <i>Untitled</i>
+                      )}{" "}
+                    </Link>
+                  </li>
+                ))
+              }
             </ul>
           ) : (
             <p>
