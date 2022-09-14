@@ -8,7 +8,7 @@ Everything is written in React and is completly customiseable.
 
 
 # Todo
-- [ ] Make list search able
+- [ x ] Make list search able
 - [ ] Independent scrolling detail panel (or fixed nav .. )
 - [ ] Add current page highlighting
 - [ ] Add scss and variables
