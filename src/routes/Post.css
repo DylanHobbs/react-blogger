@@ -34,10 +34,10 @@ blockquote {
 }
 
 
-/*
-  Markdown Element Lists
-  @ https://css-tricks.com/list-style-recipes/
-*/
+img {
+  width: 100%;
+  height: auto;
+}
 
 /*
   Markdown Element Codeblock
