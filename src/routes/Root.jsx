@@ -29,13 +29,13 @@ function Root(props) {
   const drawer = (
     <div className="sidebar">
       <Toolbar sx={{ justifyContent: "center" }}>
-        <input
-          id="postSearch"
-          placeholder="Search"
-          type="search"
-          value={searchTerm}
-          onChange={(event) => setSearchTerm(event.target.value)}
-        />
+          <input
+            id="postSearch"
+            placeholder="Search"
+            type="search"
+            value={searchTerm}
+            onChange={(event) => setSearchTerm(event.target.value)}
+          />
       </Toolbar>
       <Divider />
       <List>
@@ -53,10 +53,11 @@ function Root(props) {
             <>
               <NavLink to={`post/${post.slug}`}>
                 <ListItem key={post.slug} disablePadding>
-                  {post.title ? <>{post.title}</> : <i>Untitled</i>}{" "}
+                    {post.title ? <>{post.title}</> : <i>Untitled</i>}{" "}
                 </ListItem>
               </NavLink>
             </>
+
           ))}
       </List>
     </div>
@@ -84,7 +85,7 @@ function Root(props) {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { md: "none" }, boxShadow: "0px 0px" }}
           >
-            <MenuIcon />
+            <MenuIcon fontSize="large" />
           </IconButton>
         </Toolbar>
       </AppBar>
