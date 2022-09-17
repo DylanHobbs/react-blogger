@@ -129,9 +129,10 @@ function Root(props) {
       <Box
         component="main"
         sx={{
+          display: 'flex',
           flexGrow: 1,
           p: 3,
-          width: { md: `calc(100% - ${drawerWidth}px)` },
+          width: '100%',
         }}
       >
         <div id="detail">

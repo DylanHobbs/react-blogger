@@ -39,3 +39,7 @@ li {
   background-position: 0.625rem 0.75rem;
   background-size: 1.2rem;
 }
+
+#detail {
+  width: 100%;
+}

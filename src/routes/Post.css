@@ -51,6 +51,7 @@ pre {
   background: #f2f2f2;
   padding: 10px 20px;
   border-left: 3px solid black;
+  overflow-x: scroll;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
