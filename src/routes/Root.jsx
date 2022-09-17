@@ -6,13 +6,13 @@ import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useOutlet } from "react-router-dom";
 import { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import "./Root.css";
+import Default from "./Default";
 
 const drawerWidth = 320;
 
@@ -21,6 +21,7 @@ function Root(props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const posts = useLoaderData();
   const [searchTerm, setSearchTerm] = useState("");
+  const outlet = useOutlet();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -29,13 +30,13 @@ function Root(props) {
   const drawer = (
     <div className="sidebar">
       <Toolbar sx={{ justifyContent: "center" }}>
-          <input
-            id="postSearch"
-            placeholder="Search"
-            type="search"
-            value={searchTerm}
-            onChange={(event) => setSearchTerm(event.target.value)}
-          />
+        <input
+          id="postSearch"
+          placeholder="Search"
+          type="search"
+          value={searchTerm}
+          onChange={(event) => setSearchTerm(event.target.value)}
+        />
       </Toolbar>
       <Divider />
       <List>
@@ -51,13 +52,15 @@ function Root(props) {
           })
           .map((post) => (
             <>
-              <NavLink to={`post/${post.slug}`}>
+              <NavLink
+                onClick={() => handleDrawerToggle()}
+                to={`post/${post.slug}`}
+              >
                 <ListItem key={post.slug} disablePadding>
-                    {post.title ? <>{post.title}</> : <i>Untitled</i>}{" "}
+                  {post.title ? <>{post.title}</> : <i>Untitled</i>}{" "}
                 </ListItem>
               </NavLink>
             </>
-
           ))}
       </List>
     </div>
@@ -69,9 +72,10 @@ function Root(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <AppBar
-        color="transparent"
+        color="inherit"
         position="fixed"
         sx={{
+          backgroundColor: { md: 'transparent' },
           boxShadow: "0px 0px",
           width: { md: `calc(100% - ${drawerWidth}px)` },
           ml: { md: `${drawerWidth}px` },
@@ -85,7 +89,7 @@ function Root(props) {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { md: "none" }, boxShadow: "0px 0px" }}
           >
-            <MenuIcon fontSize="large" />
+            <MenuIcon style={{ backgroundColor: "white" }} fontSize="large" />
           </IconButton>
         </Toolbar>
       </AppBar>
@@ -129,14 +133,15 @@ function Root(props) {
       <Box
         component="main"
         sx={{
-          display: 'flex',
+          display: "flex",
           flexGrow: 1,
           p: 3,
-          width: '100%',
+          width: "100%",
         }}
       >
         <div id="detail">
-          <Outlet />
+          {/* <Outlet /> */}
+          {outlet || <Default></Default>}
         </div>
       </Box>
     </Box>
