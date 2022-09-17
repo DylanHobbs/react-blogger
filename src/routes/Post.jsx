@@ -3,10 +3,9 @@ import './Post.css'
 
 export default function Post() {
   const post = useLoaderData()
-  
+
   return (
-    <div>
-      <h1>{post.title}</h1>
+    <div className="post">
       <div dangerouslySetInnerHTML={{__html: post.content}}></div>
     </div>
   )
